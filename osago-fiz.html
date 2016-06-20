@@ -1,0 +1,102 @@
+
+<!-- We don't need full layout here, because this page will be parsed with Ajax-->
+<!-- Top Navbar-->
+<div class="pages navbar-fixed">
+  <!-- Page, data-page contains page name-->
+  <div data-page="osago-fiz" class="page">
+    <div class="navbar">
+      <div class="navbar-inner">
+        <!-- We have home navbar without left link-->
+        <div class="left"><a href="#" class="back link"><i class="icon icon-back"></i></a></div>
+        <div class="center sliding">КБМ (Физическое лицо)</div>
+      </div>
+    </div>
+    <!-- Scrollable page content-->
+    <div class="page-content">
+      <div class="list-block">
+        <ul>
+          <li>
+            <div class="item-content">
+              <div class="item-inner"> 
+                <div class="item-title label">Фамилия</div>
+                <div class="item-input">
+                  <input name="firstname" type="text" placeholder="фамилия"/>
+                </div>
+              </div>
+            </div>
+          </li>
+          <li>
+            <div class="item-content">
+              <div class="item-inner"> 
+                <div class="item-title label">Имя</div>
+                <div class="item-input">
+                  <input name="lastname" type="text" placeholder="имя"/>
+                </div>
+              </div>
+            </div>
+          </li>
+          <li>
+            <div class="item-content">
+              <div class="item-inner"> 
+                <div class="item-title label">Отчество</div>
+                <div class="item-input">
+                  <input name="patronymic" type="text" placeholder="отчество"/>
+                </div>
+              </div>
+            </div>
+          </li>
+          <li>
+            <div class="item-content">
+              <div class="item-inner"> 
+                <div class="item-title label">Дата рождения</div>
+                <div class="item-input">
+                  <input name="birtdate" type="date" placeholder="дата рождения"/>
+                </div>
+              </div>
+            </div>
+          </li>
+          <li>
+            <div class="item-content">
+              <div class="item-inner"> 
+                <div class="item-title label">Серия В/У</div>
+                <div class="item-input">
+                  <input name="serial" type="text" placeholder="серия в/у" maxlength="4"/>
+                </div>
+              </div>
+            </div>
+          </li>
+          <li>
+            <div class="item-content">
+              <div class="item-inner"> 
+                <div class="item-title label">Номер В/У</div>
+                <div class="item-input">
+                  <input name="number" type="text" placeholder="номер в/у" maxlength="6"/>
+                </div>
+              </div>
+            </div>
+          </li>
+          <li>
+            <div class="item-content">
+              <div class="item-media"><img id="dkbm-captcha"/></div>
+            </div>
+          </li>
+          <li>
+            <div class="item-content">
+              <div class="item-inner"> 
+                <div class="item-title label">Код с картинки</div>
+                <div class="item-input">
+                  <input name="code" type="text" placeholder="код"/>
+                </div>
+              </div>
+            </div>
+          </li>
+          <li>
+            <div class="content-block">
+              <input name="JSID" type="hidden"/><a href="#" id="check-kbm" class="button button-raised">Проверить</a>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
