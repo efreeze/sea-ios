@@ -29,7 +29,7 @@ i.icon.icon-logo {
     background: #e3002b;
 }
 .button, a {
-    color: #e3002b;
+    /*color: #e3002b;*/
 }
 .login-screen {
     background: url("../img/splash.png") no-repeat;
