@@ -9,7 +9,7 @@
         <!-- We have home navbar without left link-->
         <div class="left"><a href="#" class="back link"><i class="icon icon-back"></i></a></div>
         <div class="center sliding">Добавить полис </div>
-        <div class="right"><a href="#" class="link">Сохранить </a></div>
+        <div class="right"><a href="#" class="link add-polis">Сохранить </a></div>
       </div>
     </div>
     <!-- Scrollable page content-->
@@ -43,15 +43,34 @@
           </li>
           <li>
             <div class="item-content">
-              <div class="item-media"><img id="dkbm-captcha" src="http://dkbm-web.autoins.ru/dkbm-web-1.0/simpleCaptcha.png"/></div>
+              <div class="item-inner"> 
+                <div class="item-title label">Страхователь</div>
+                <div class="item-input">
+                  <input name="company" type="text" placeholder="страхователь" maxLength="10"/>
+                </div>
+              </div>
             </div>
           </li>
           <li>
             <div class="item-content">
               <div class="item-inner"> 
-                <div class="item-title label">Код с картинки</div>
+                <div class="item-title label">Дата окончания полиса</div>
                 <div class="item-input">
-                  <input name="code" type="text" placeholder="код"/>
+                  <input name="date" type="text" placeholder="дата окончания полиса" maxLength="10"/>
+                </div>
+              </div>
+            </div>
+          </li>
+          <li>
+            <div class="item-content">
+              <div class="item-inner"> 
+                <div class="item-title label">Вид страхования</div>
+                <div class="item-input">
+                  <select name="type">
+                    <option value="ОСАГО" selected="selected">ОСАГО</option>
+                    <option value="КАСКО">КАСКО</option>
+                    <option value="ИНОЕ">ИНОЕ</option>
+                  </select>
                 </div>
               </div>
             </div>
