@@ -196,11 +196,13 @@ myApp.onPageInit('osago-ur', function (page) {
         }
     });
 });
-myApp.onPageInit('my', function (page) {
+
+function renderPolices() {
     var polices = JSON.parse(window.localStorage.getItem('polices'));
     if (!polices) {
         polices = [];
     }
+    $$('#my-list').html('');
     if (polices.length > 0) {
         polices.map(function(val, idx) {
             var endDate = val.policyEndDate.split('.'),
@@ -226,10 +228,42 @@ myApp.onPageInit('my', function (page) {
             $$('#my-list').append(item);
         });
     }
+    return polices;
+}
 
+myApp.onPageInit('my', function (page) {
+    var polices = renderPolices();
     $$('.my-polis').on('click', function (e) {
         var idx = $$(this).parents('li').data('idx');
         showOsago(polices[idx], true, idx);
+    });
+});
+myApp.onPageInit('my-add', function (page) {
+    var myCalendar = myApp.calendar({
+        input: 'input[name=date]',
+        dateFormat: 'dd.mm.yyyy'
+    });
+    $$('.add-polis').on('click', function() {
+        var polices = JSON.parse(window.localStorage.getItem('polices'));
+        if (!polices) {
+            polices = [];
+        }
+        var date = $$('input[name=date]').val();//.split('-');
+
+        var data = {
+            "bsoNumber": $$('input[name=number]').val(),
+            "insCompanyName":$$('input[name=company]').val(),
+            "bsoSeries":$$('select[name=serial]').val(),
+            "changeDate":$$('input[name=date]').val(),
+            "policyEndDate":date,//[date[2], date[1], date[0]].join('.'),
+            "bsoStatusName":"Находится у страхователя"
+        }
+        if (polices.indexOf(data) < 0) {
+            polices.push(data);
+            window.localStorage.setItem('polices', JSON.stringify(polices));
+        }
+        mainView.router.back();
+        renderPolices();
     });
 });
 function datesDiff(date1, date2, interval) {
@@ -334,25 +368,29 @@ function showOsago(data, no_button, idx) {
             '                       <div class="item-inner">' +
             '                           <div class="item-title">' + data.bsoStatusName +'</div>' +
             '                       </div>' +
-            '                   </li>' +
-            '                   <li class="item-content">' +
-            '                       <div class="item-inner">' +
-            '                           <div class="item-title">Дата выдачи</div>' +
-            '                           <div class="item-after">' + data.policyCreateDate +'</div>' +
-            '                       </div>' +
-            '                   </li>' +
-            '               </ul>' +
+            '                   </li>';
+            if (data.policyCreateDate) {
+                html += '                   <li class="item-content">' +
+                '                       <div class="item-inner">' +
+                '                           <div class="item-title">Дата выдачи</div>' +
+                '                           <div class="item-after">' + data.policyCreateDate +'</div>' +
+                '                       </div>' +
+                '                   </li>';
+            }
+            html += '               </ul>' +
             '           </div>' +
             '           <div class="content-block-title">Действителен</div>' +
             '           <div class="list-block">' +
-            '               <ul>' +
-            '                   <li class="item-content">' +
-            '                       <div class="item-inner">' +
-            '                           <div class="item-title">С</div>' +
-            '                           <div class="item-after">' + data.policyBeginDate +'</div>' +
-            '                       </div>' +
-            '                   </li>' +
-            '                   <li class="item-content">' +
+            '               <ul>';
+            if (data.policyBeginDate) {
+                html += '                   <li class="item-content">' +
+                '                       <div class="item-inner">' +
+                '                           <div class="item-title">С</div>' +
+                '                           <div class="item-after">' + data.policyBeginDate +'</div>' +
+                '                       </div>' +
+                '                   </li>';
+            }
+            html += '                   <li class="item-content">' +
             '                       <div class="item-inner">' +
             '                           <div class="item-title">По</div>' +
             '                           <div class="item-after">' + data.policyEndDate +'</div>' +
@@ -396,7 +434,41 @@ function onBackKey(e) {
     mainView.router.back();
 }
 
+function chechPolices () {
+    console.log('check start');
+    var polices = JSON.parse(window.localStorage.getItem('polices'));
+    polices.map(function(val, index) {
+        var endDate = val.policyEndDate.split('.'),
+            days = datesDiff(new Date(endDate[2], endDate[1] - 1, endDate[0]), new Date(), 'days');
+        if (days <= 7) {
+            cordova.plugins.backgroundMode.configure({
+                text:'Заканчивается полис ' + val.bsoSeries + ' ' + val.bsoNumber + ' (' + val.insCompanyName + ')'
+            });
+        }
+    });
+    setTimeout(chechPolices, 60000 * 30);
+}
+
+function background() {
+    if (cordova && cordova.plugins && cordova.plugins.backgroundMode) {
+        console.log('background start');
+        // Android customization
+        cordova.plugins.backgroundMode.setDefaults({title: 'Проверка полисов', text: 'Полисы актуальны'});
+        // Enable background mode
+        cordova.plugins.backgroundMode.enable();
+
+        // Called when background mode has been activated
+        cordova.plugins.backgroundMode.onactivate = function () {
+            chechPolices();
+        }
+
+    } else {
+        setTimeout(background, 1000);
+    }
+}
+
 function onDeviceReady() {
     document.addEventListener("backbutton", onBackKey, false);
     myApp.init();
+    background();
 }
