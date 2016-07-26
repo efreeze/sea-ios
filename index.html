@@ -11,8 +11,9 @@
     <link rel="stylesheet" href="css/framework7.ios.colors.min.css">
     <!-- Path to your custom app styles-->
     <link rel="stylesheet" href="css/my-app.css">
+    <script src="https://api-maps.yandex.ru/2.1/?lang=ru_RU" type="text/javascript"></script>
   </head>
-  <body onload="onDeviceReady()" class="theme-black">
+  <body onload="onDeviceReady()">
     <!-- Panels overlay-->
     <div class="panel-overlay"></div>
     <!-- Left panel with reveal effect-->
@@ -24,7 +25,7 @@
               <div class="content-block">
                 <div class="list-block">
                   <ul>
-                    <li><a href="index.html" class="item-link close-panel">
+                    <li><a href="dtp.html" class="item-link close-panel">
                         <div class="item-content">
                           <div class="item-media"><i class="icon icon-road-accident"></i></div>
                           <div class="item-inner">
@@ -60,81 +61,18 @@
         <!-- Pages, because we need fixed-through navbar and toolbar, it has additional appropriate classes-->
         <div class="pages navbar-fixed">
           <!-- Page, data-page contains page name-->
-          <div data-page="index" class="page">
-            <!-- Top Navbar-->
-            <div class="navbar">
+          <div data-page="index" class="page index-page">
+            <div class="navbar index-page">
               <div class="navbar-inner">
                 <!-- We have home navbar without left link-->
                 <div class="left">
-                  <!-- Right link contains only icon - additional "icon-only" class--><a href="#" class="link icon-only open-panel"> <i class="icon icon-bars"></i></a>
+                  <!-- Right link contains only icon - additional "icon-only" class--><a href="#" class="link icon-only open-panel"> <i class="icon icon-bars icon-bars-red"></i></a>
                 </div>
-                <div class="center sliding">Попали в ДТП?</div>
               </div>
             </div>
-            <!-- Scrollable page content-->
-            <div class="page-content">
-              <div class="list-block media-list">
-                <ul>
-                  <li><a href="#" class="item-link external item-content ext-call">
-                      <div class="item-media"><img src="img/i-logo-w.png" width="44"></div>
-                      <div class="item-inner">
-                        <div class="item-title-row">
-                          <div class="item-title">Вызвать аварийного комиссара</div>
-                        </div>
-                        <div class="item-subtitle">Позвонить аварийному комисару</div>
-                      </div></a></li>
-                </ul>
-              </div>
-              <div class="content-block-title">Проверка полиса ОСАГО</div>
-              <div class="list-block">
-                <ul> 
-                  <li>
-                    <div class="item-content">
-                      <div class="item-inner">
-                        <div class="item-title label">Серия</div>
-                        <div class="item-input">
-                          <select name="serial">
-                            <option value="ХХХ" selected>ХХХ</option>
-                            <option value="ССС">ССС</option>
-                            <option value="ЕЕЕ">ЕЕЕ</option>
-                            <option value="ВВВ">ВВВ</option>
-                          </select>
-                        </div>
-                      </div>
-                    </div>
-                  </li>
-                  <li>
-                    <div class="item-content">
-                      <div class="item-inner"> 
-                        <div class="item-title label">Номер</div>
-                        <div class="item-input">
-                          <input name="number" type="number" placeholder="номер" maxlength="10">
-                        </div>
-                      </div>
-                    </div>
-                  </li>
-                  <li>
-                    <div class="item-content">
-                      <div class="item-media"><img id="dkbm-captcha"></div>
-                    </div>
-                  </li>
-                  <li>
-                    <div class="item-content">
-                      <div class="item-inner"> 
-                        <div class="item-title label">Код с картинки</div>
-                        <div class="item-input">
-                          <input name="code" type="text" placeholder="код" maxlength="7">
-                        </div>
-                      </div>
-                    </div>
-                  </li>
-                  <li>
-                    <div class="content-block">
-                      <input name="JSID" type="hidden"><a href="#" id="check-polis" class="button open-preloader">Проверить</a>
-                    </div>
-                  </li>
-                </ul>
-              </div>
+            <h1> <img src="img/bg-logo.png" width="100%">Владивосток - город вежливых водителей</h1>
+            <div class="toolbar toolbar-bottom index-toolbar">
+              <div class="content-block buttons-row"><a href="#" class="button button-fill ext-call">Позвонить</a><a href="map.html" class="button button-fill">Доехать</a></div>
             </div>
           </div>
         </div>

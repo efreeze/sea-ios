@@ -10,7 +10,27 @@ var mainView = myApp.addView('.view-main', {
     dynamicNavbar: true
 });
 
-myApp.onPageInit('index', function (page) {
+myApp.onPageInit('index', function() {
+    $$('.ext-call').on('click', function(e) {
+        myApp.confirm('Вы хотите позвонить аварийному комиссару?', '', function() {
+            window.location.href='tel:+74232488428';
+        });
+    });
+});
+
+myApp.onPageInit('map', function (page) {
+    myApp.showIndicator();
+    ymaps.ready(function(){
+        var myMap = new ymaps.Map("map", {
+            center:[43.134499, 131.906748], // Москва
+            zoom:15
+        });
+        var myPlacemark = new ymaps.Placemark([43.134499, 131.906748]);
+        myMap.geoObjects.add(myPlacemark);
+        myApp.hideIndicator();
+     });
+});
+myApp.onPageInit('dtp', function (page) {
     reload_captcha();
     $$('#check-polis').on('click', function (e) {
         var serial = $$('[name=serial]').val(),

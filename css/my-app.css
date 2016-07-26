@@ -25,9 +25,9 @@ i.icon.icon-logo {
   background-image: url("../img/i-logo.png");
   border-radius: 3px;
 }
-.navbar, .toolbar, .subnavbar {
+/*.navbar, .toolbar, .subnavbar {
     background: #e3002b;
-}
+}*/
 .button, a {
     /*color: #e3002b;*/
 }
@@ -86,4 +86,33 @@ i.icon.icon-logo {
         /*-webkit-transform: scale(0.95);*/
         opacity: 0.7;
     }
+}
+.index-page {
+    background: url('../img/bg_index.jpg') no-repeat bottom !important;
+}
+
+.index-page h1 {
+    text-align: center;
+    color: #e3002b;
+    padding-top: 30px;
+}
+.navbar.index-page {
+    background: transparent !important;
+}
+
+.icon-bars-red {
+    background-image: url("data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D'http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg'%20width%3D'24'%20height%3D'24'%20viewBox%3D'0%200%2024%2024'%3E%3Cpath%20d%3D'M3%2018h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z'%20fill%3D'%23e3002b'%2F%3E%3C%2Fsvg%3E") !important;
+}
+.logo {
+    width: 26px;
+    height: 26px;
+}
+.index-toolbar {
+    background: none;
+}
+.index-toolbar .content-block {
+    margin-top: 0;
+}
+#map {
+    min-height: 150px;
 }
