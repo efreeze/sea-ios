@@ -116,3 +116,50 @@ i.icon.icon-logo {
 #map {
     min-height: 150px;
 }
+
+
+
+.slide1 {
+    animation: fadeInOut2 7s ease reverse forwards infinite;
+    position: fixed;
+}
+
+.slide2 {
+    animation: fadeInOut1 7s ease reverse forwards infinite;
+    position: fixed;
+    /*opacity: 0;*/
+    text-align: center;
+    width: 100%;
+}
+
+@keyframes fadeInOut1 {
+    0% { opacity: 0 }
+    10% { opacity: 1 }
+    20% { opacity: 1 }
+    30% { opacity: 1}
+    40% { opacity: 1}
+    50% { opacity: 0}
+    60% { opacity: 0}
+    70% { opacity: 0}
+    80% { opacity: 0}
+    90% { opacity: 0}
+    100% { opacity: 0}
+}
+
+@keyframes fadeInOut2 {
+    0% { opacity: 0 }
+    10% { opacity: 0 }
+    20% { opacity: 0 }
+    30% { opacity: 0 }
+    40% { opacity: 0 }
+    50% { opacity: 0 }
+    60% { opacity: 1 }
+    70% { opacity: 1 }
+    80% { opacity: 1}
+    90% { opacity: 1}
+    100% { opacity: 0}
+}
+.avark {
+    line-height: 44px;
+    font-size: 1.3em !important;
+}
