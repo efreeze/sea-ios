@@ -163,3 +163,28 @@ i.icon.icon-logo {
     line-height: 44px;
     font-size: 1.3em !important;
 }
+.circle {
+    width: 100px !important;
+    height: 100px !important;
+    border-radius: 55px;
+    display: block;
+    border: 5px solid #777;
+}
+.circle img {
+    padding: 15px;
+}
+.avark-button {
+    display: flex;
+    flex-wrap: wrap;;
+    align-items: center;
+    justify-content: center;
+    padding-top: 20px;
+}
+
+.avark-button .text {
+    display: block;
+    width: 100%;
+    text-align: center;
+    font-size: 1.3em;
+    color:
+}
