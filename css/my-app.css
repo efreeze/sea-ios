@@ -25,6 +25,18 @@ i.icon.icon-logo {
   background-image: url("../img/i-logo.png");
   border-radius: 3px;
 }
+i.icon.icon-logo-koap {
+  width: 24px;
+  height: 24px;
+  background-image: url("../img/i-logo-koap.png");
+  border-radius: 3px;
+}
+i.icon.icon-ok {
+  width: 24px;
+  height: 24px;
+  background-image: url("../img/i-ok.png");
+  border-radius: 3px;
+}
 /*.navbar, .toolbar, .subnavbar {
     background: #e3002b;
 }*/
@@ -187,4 +199,14 @@ i.icon.icon-logo {
     text-align: center;
     font-size: 1.3em;
     color:
+}
+.leftbar .item-inner {
+    margin: 0 !important;
+}
+.label-checkbox .item-inner {
+    margin-bottom: 0 !important;
+}
+.label-checkbox .item-media {
+    padding: 8px !important;
+    /*padding-bottom: 8px !important;*/
 }

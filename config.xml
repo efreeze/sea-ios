@@ -4,7 +4,7 @@
 <widget xmlns     = "http://www.w3.org/ns/widgets"
         xmlns:gap = "http://phonegap.com/ns/1.0"
         id        = "ru.efreeze.sea"
-        version   = "1.0.8">
+        version   = "1.0.11">
 
     <name>Sea</name>
 
@@ -72,6 +72,7 @@
     <!-- <plugin name="cordova-plugin-vibration" spec="~2.1.0" /> -->
     <plugin name="cordova-plugin-whitelist" spec="~1.2.1" />
     <plugin name="cordova-plugin-background-mode" spec="~0.6.5" />
+    <plugin name="com.badrit.emailcomposer" spec="0.1.0" source="pgb" />
 
     <icon src="img/i-logo.png" />
     <platform name="android">
@@ -111,7 +112,9 @@
         <allow-intent href="itms:*" />
         <allow-intent href="itms-apps:*" />
     </platform>
-
+    <gap:config-file platform="ios" parent="UIBackgroundModes" overwrite="true">
+        <array><string>location</string></array>
+    </gap:config-file>
 
 
 </widget>
