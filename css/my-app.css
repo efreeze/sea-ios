@@ -100,7 +100,7 @@ i.icon.icon-ok {
     }
 }
 .index-page {
-    background: url('../img/bg_index.jpg') no-repeat bottom !important;
+    background: white url('../img/bg_index.jpg') no-repeat bottom !important;
 }
 
 .index-page h1 {
@@ -109,7 +109,7 @@ i.icon.icon-ok {
     padding-top: 30px;
 }
 .navbar.index-page {
-    background: transparent !important;
+    background: white !important;
 }
 
 .icon-bars-red {

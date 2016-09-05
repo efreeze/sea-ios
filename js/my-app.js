@@ -16,6 +16,9 @@ myApp.onPageInit('index', function() {
             window.location.href='tel:+74232488428';
         });
     });
+    $$('.to-main').on('click', function () {
+        mainView.router.loadPage('index'); 
+    })
 });
 
 myApp.onPageInit('map', function (page) {
