@@ -106,7 +106,7 @@ i.icon.icon-ok {
 .index-page h1 {
     text-align: center;
     color: #e3002b;
-    padding-top: 30px;
+    padding-top: 35px;
 }
 .navbar.index-page {
     background: white !important;
@@ -180,7 +180,7 @@ i.icon.icon-ok {
     height: 100px !important;
     border-radius: 55px;
     display: block;
-    border: 5px solid #777;
+    border: 5px solid #FFF;
 }
 .circle img {
     padding: 15px;

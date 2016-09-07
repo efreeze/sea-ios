@@ -13,11 +13,11 @@ var mainView = myApp.addView('.view-main', {
 myApp.onPageInit('index', function() {
     $$('.ext-call').on('click', function(e) {
         myApp.confirm('Вы хотите позвонить аварийному комиссару?', '', function() {
-            window.location.href='tel:+74232488428';
+            window.location.href='tel:+74232487707';
         });
     });
     $$('.to-main').on('click', function () {
-        mainView.router.loadPage('index'); 
+        mainView.router.loadPage('index');
     })
 });
 
@@ -66,7 +66,7 @@ myApp.onPageInit('dtp', function (page) {
         }
     });
     $$('.ext-call').on('click', function(e) {
-        window.location.href='tel:+74232488428';
+        window.location.href='tel:+74232487707';
     });
 });
 myApp.onPageInit('mulct', function (page) {
