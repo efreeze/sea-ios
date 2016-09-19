@@ -3,8 +3,9 @@
 <!-- config.xml reference: https://build.phonegap.com/docs/config-xml -->
 <widget xmlns     = "http://www.w3.org/ns/widgets"
         xmlns:gap = "http://phonegap.com/ns/1.0"
+        xmlns:cdv="http://cordova.apache.org/ns/1.0"
         id        = "ru.efreeze.sea"
-        version   = "1.0.15">
+        version   = "1.0.18">
 
     <name>КОАП</name>
 
